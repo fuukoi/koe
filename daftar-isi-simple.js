@@ -22,6 +22,7 @@
    var postUrl = new Array();       // array of posturls
    var postDate = new Array();      // array of post publish dates
    var postSum = new Array();       // array of post summaries
+   var postLabels = new Array();    // array of post labels
 
 // global variables
    var sortBy = "datenewest";         // default value for sorting ToC
@@ -103,6 +104,7 @@ function loadtoc(json) {
             postDate.push(postdate);
             postUrl.push(posturl);
             postSum.push(postcontent);
+            postLabels.push(pll);
          }
       }
       if(totalEntires==totalPosts) {tocLoaded=true;showToc();}
@@ -159,6 +161,9 @@ function sortPosts(sortBy) {
       var temp = postSum[x];
       postSum[x] = postSum[y];
       postSum[y] = temp;
+      var temp = postLabels[x];
+      postLabels[x] = postLabels[y];
+      postLabels[y] = temp;
    } // end swapPosts
 
    for (var i=0; i < postTitle.length-1; i++) {
@@ -177,10 +182,12 @@ function displayToc(filter) {
 // this function creates a three-column table and adds it to the screen
    var numDisplayed = 0;
    var tocTable = '';
-   var tocHead1 = 'Episódio';
+   var tocHead1 = 'Episódios';
    var tocTool1 = 'Click to sort by title';
    var tocHead2 = 'Data';
    var tocTool2 = 'Click to sort by date';
+   var tocHead3 = 'Labels';
+   var tocTool3 = '';
    if (sortBy == "titleasc") { 
       tocTool1 += ' (descending)';
       tocTool2 += ' (newest first)';
@@ -197,13 +204,19 @@ function displayToc(filter) {
       tocTool1 += ' (ascending)';
       tocTool2 += ' (oldest first)';
    }
+   if (postFilter != '') {
+      tocTool3 = 'Click to show all posts';
+   }
    tocTable += '<table>';
    tocTable += '<tr>';
    tocTable += '<td class="toc-header-col1">';
-   tocTable += '<a href="javascript:toggleTitleSort();" title="Episódios' + tocTool1 + '">' + tocHead1 + '</a>';
+   tocTable += '<a href="javascript:toggleTitleSort();" title="' + tocTool1 + '">' + tocHead1 + '</a>';
    tocTable += '</td>';
    tocTable += '<td class="toc-header-col2">';
-   tocTable += '<a href="javascript:toggleDateSort();" title="Data' + tocTool2 + '">' + tocHead2 + '</a>';
+   tocTable += '<a href="javascript:toggleDateSort();" title="' + tocTool2 + '">' + tocHead2 + '</a>';
+   tocTable += '</td>';
+   tocTable += '<td class="toc-header-col3">';
+   tocTable += '<a href="javascript:allPosts();" title="' + tocTool3 + '">' + tocHead3 + '</a>';
    tocTable += '</td>';
    tocTable += '</tr>';
    for (var i = 0; i < postTitle.length; i++) {
@@ -220,7 +233,7 @@ function displayToc(filter) {
    }
    tocTable += '</table>';
    if (numDisplayed == postTitle.length) {
-      var tocNote = '<span class="toc-note"> ' + postTitle.length + ' Episódios<br/></span>'; }
+      var tocNote = '<span class="toc-note">  ' + postTitle.length + ' Episódios<br/></span>'; }
    else {
       var tocNote = '<span class="toc-note">Displaying ' + numDisplayed + ' posts labeled \'';
       tocNote += postFilter + '\' of '+ postTitle.length + ' posts total<br/></span>';
