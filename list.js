@@ -186,8 +186,6 @@ function displayToc(filter) {
    var tocTool1 = 'Click to sort by title';
    var tocHead2 = 'Data';
    var tocTool2 = 'Click to sort by date';
-   var tocHead3 = '';
-   var tocTool3 = '';
    if (sortBy == "titleasc") { 
       tocTool1 += ' (descending)';
       tocTool2 += ' (newest first)';
