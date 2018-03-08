@@ -182,10 +182,12 @@ function displayToc(filter) {
 // this function creates a three-column table and adds it to the screen
    var numDisplayed = 0;
    var tocTable = '';
-   var tocHead1 = 'Episódios';
+   var tocHead1 = 'POST TITLE';
    var tocTool1 = 'Click to sort by title';
-   var tocHead2 = 'Data';
+   var tocHead2 = 'POST DATE';
    var tocTool2 = 'Click to sort by date';
+   var tocHead3 = 'LABELS';
+   var tocTool3 = '';
    if (sortBy == "titleasc") { 
       tocTool1 += ' (descending)';
       tocTool2 += ' (newest first)';
@@ -202,6 +204,9 @@ function displayToc(filter) {
       tocTool1 += ' (ascending)';
       tocTool2 += ' (oldest first)';
    }
+   if (postFilter != '') {
+      tocTool3 = 'Click to show all posts';
+   }
    tocTable += '<table>';
    tocTable += '<tr>';
    tocTable += '<td class="toc-header-col1">';
@@ -209,6 +214,9 @@ function displayToc(filter) {
    tocTable += '</td>';
    tocTable += '<td class="toc-header-col2">';
    tocTable += '<a href="javascript:toggleDateSort();" title="' + tocTool2 + '">' + tocHead2 + '</a>';
+   tocTable += '</td>';
+   tocTable += '<td class="toc-header-col3">';
+   tocTable += '<a href="javascript:allPosts();" title="' + tocTool3 + '">' + tocHead3 + '</a>';
    tocTable += '</td>';
    tocTable += '</tr>';
    for (var i = 0; i < postTitle.length; i++) {
@@ -225,10 +233,10 @@ function displayToc(filter) {
    }
    tocTable += '</table>';
    if (numDisplayed == postTitle.length) {
-      var tocNote = '<span class="toc-note"> ' + postTitle.length + ' Episódios<br/></span>'; }
+      var tocNote = '<span class="toc-note">Displaying all ' + postTitle.length + ' posts<br/></span>'; }
    else {
-      var tocNote = '<span class="toc-note"> ' + numDisplayed + ' Episódios \'';
-      tocNote += postFilter + '\'  '+ postTitle.length + ' Episódios<br/></span>';
+      var tocNote = '<span class="toc-note">Displaying ' + numDisplayed + ' posts labeled \'';
+      tocNote += postFilter + '\' of '+ postTitle.length + ' posts total<br/></span>';
    }
    tocdiv.innerHTML = tocNote + tocTable;
 } // end of displayToc
