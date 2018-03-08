@@ -22,7 +22,6 @@
    var postUrl = new Array();       // array of posturls
    var postDate = new Array();      // array of post publish dates
    var postSum = new Array();       // array of post summaries
-   var postLabels = new Array();    // array of post labels
 
 // global variables
    var sortBy = "datenewest";         // default value for sorting ToC
@@ -104,7 +103,6 @@ function loadtoc(json) {
             postDate.push(postdate);
             postUrl.push(posturl);
             postSum.push(postcontent);
-            postLabels.push(pll);
          }
       }
       if(totalEntires==totalPosts) {tocLoaded=true;showToc();}
@@ -161,9 +159,6 @@ function sortPosts(sortBy) {
       var temp = postSum[x];
       postSum[x] = postSum[y];
       postSum[y] = temp;
-      var temp = postLabels[x];
-      postLabels[x] = postLabels[y];
-      postLabels[y] = temp;
    } // end swapPosts
 
    for (var i=0; i < postTitle.length-1; i++) {
