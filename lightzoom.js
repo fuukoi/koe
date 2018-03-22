@@ -210,6 +210,37 @@
 
         });
 
+        // Update zoom on resize and orientationchange
+        $(window).on('resize.lg.zoom scroll.lg.zoom orientationchange.lg.zoom', function() {
+            _this.pageX = $(window).width() / 2;
+            _this.pageY = ($(window).height() / 2) + $(window).scrollTop();
+            zoom(scale);
+        });
+
+        $('#lg-zoom-out').on('click.lg', function() {
+            if (_this.core.$outer.find('.lg-current .lg-image').length) {
+                scale -= _this.core.s.scale;
+                callScale();
+            }
+        });
+
+        $('#lg-zoom-in').on('click.lg', function() {
+            if (_this.core.$outer.find('.lg-current .lg-image').length) {
+                scale += _this.core.s.scale;
+                callScale();
+            }
+        });
+
+        $('#lg-actual-size').on('click.lg', function(event) {
+            actualSize(event, _this.core.$slide.eq(_this.core.index).find('.lg-image'), _this.core.index, true);
+        });
+
+        // Reset zoom on slide change
+        _this.core.$el.on('onBeforeSlide.lg.tm', function() {
+            scale = 0;
+            _this.resetZoom();
+        });
+
         // Drag option after zoom
         if (!_this.core.isTouch) {
             _this.zoomDrag();
@@ -220,6 +251,12 @@
         }
 
     };
+
+    // Reset zoom effect
+    Zoom.prototype.resetZoom = function() {
+        this.core.$outer.removeClass('lg-zoomed');
+        this.core.$slide.find('.lg-img-wrap').removeAttr('style data-x data-y');
+        this.core.$slide.find('.lg-image').removeAttr('style data-scale');
 
         // Reset pagx pagy values to center
         this.pageX = $(window).width() / 2;
