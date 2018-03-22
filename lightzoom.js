@@ -252,12 +252,6 @@
 
     };
 
-    // Reset zoom effect
-    Zoom.prototype.resetZoom = function() {
-        this.core.$outer.removeClass('lg-zoomed');
-        this.core.$slide.find('.lg-img-wrap').removeAttr('style data-x data-y');
-        this.core.$slide.find('.lg-image').removeAttr('style data-scale');
-
         // Reset pagx pagy values to center
         this.pageX = $(window).width() / 2;
         this.pageY = ($(window).height() / 2) + $(window).scrollTop();
