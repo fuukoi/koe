@@ -235,12 +235,6 @@
             actualSize(event, _this.core.$slide.eq(_this.core.index).find('.lg-image'), _this.core.index, true);
         });
 
-        // Reset zoom on slide change
-        _this.core.$el.on('onBeforeSlide.lg.tm', function() {
-            scale = 0;
-            _this.resetZoom();
-        });
-
         // Drag option after zoom
         if (!_this.core.isTouch) {
             _this.zoomDrag();
