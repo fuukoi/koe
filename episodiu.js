@@ -220,7 +220,7 @@ function displayToc(filter) {
    }
    tocTable += '</table>';
    if (numDisplayed == postTitle.length) {
-      var tocNote = '<br /><span class="botao-ep toc-note"> ' + postTitle.length + ' Episódios<br/></span>'; }
+      var tocNote = '<span class="botao-ep toc-note"> ' + postTitle.length + ' Episódios<br/></span>'; }
    else {
       var tocNote = '<span class="toc-note">Displaying ' + numDisplayed + ' posts labeled \'';
       tocNote += postFilter + '\' of '+ postTitle.length + ' posts total<br/></span>';
