@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --marrom: #ac6c50;
+    --azul: #253640;
+    --rosa: #efd5ca;
+    --verde: #5b6356;
+    --bege: #f5eee8;
+    --font-normal: 'Kulim Park', sans-serif;
+    --font-standart: 'Old Standard TT', serif;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-normal);
+}
+.container-inteiro{
+    width: 1343px;
+}
+.container-medio{
+    width: 1080px;
+}
+.container-pequeno{
+    width: 800px;
+}
+.menu{
+    width: 60%;
+    height: 70px;
+    background: white;
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10000;
+}
+.header{
+    height: 570px;
+    background: var(--bege);
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.header .container-inteiro{
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.website-titulo{
+    position: absolute;
+    top: 66px;
+    left: 17%;
+    font-size: 60px;
+    font-family: var(--font-normal);
+    transform: translate(-17%,0);
+    z-index: 10;
+    color: white;
+}
+.retangulo-um{
+    position: absolute;
+    top: 34%;
+    transform: translate(0, -34%);
+    background: var(--rosa);
+    width: 54%;
+    height: 54%;
+    left: 0;
+    z-index: 9;
+}
+.retangulo-dois{
+    position: absolute;
+    top: 70%;
+    transform: translate(0, -70%);
+    background: var(--marrom);
+    width: 54%;
+    height: 54%;
+    right: 0;
+    z-index: 8;
+}
+.retangulo-tres{
+    width: 50%;
+    height: 70%;
+    background: var(--verde);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.header .container-pequeno{
+    position: absolute;
+    bottom: -100px;
+    height: 455px;
+    left: 50%;
+    transform: translate(-50%,0);
+    z-index: 10;
+}
+.header-imagem{
+    position: absolute;
+    top: 0;
+    left: 80px;
+    width: 30%;
+    height: 80%;
+    background: url(../images/plant.jfif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+.text-box{
+    position: absolute;
+    top: 80px;
+    right: 80px;
+    width: 40%;
+    height: 80%;
+    background: var(--azul);
+    font-size: 16px;
+    font-family: var(--font-standart);
+    padding: 50px;
+    color: white;
+}
+.text-box-titulo{
+    position: absolute;
+    top: 53px;
+    right: 111px;
+    font-size: 43px;
+    font-family: var(--font-standart);
+    color: white;
+    z-index: 1;
+}
+.header svg{
+    position: absolute;
+    bottom: -100px;
+    transform: rotate(180deg);
+}
