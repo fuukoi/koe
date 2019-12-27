@@ -13,10 +13,7 @@
 html, body{
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+    margin: 0;
     font-family: var(--font-normal);
 }
 .container-inteiro{
@@ -85,10 +82,10 @@ html, body{
 }
 .retangulo-tres{
     width: 50%;
-    height: 70%;
+    height: 81%;
     background: var(--verde);
     position: absolute;
-    bottom: 0;
+    bottom: -60px;
     left: 50%;
     transform: translate(-50%,0);
 }
@@ -136,4 +133,83 @@ html, body{
     position: absolute;
     bottom: -100px;
     transform: rotate(180deg);
+}
+.me {
+    height: 660px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.imagem-me{
+    background: url(../images/me.jfif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 28%;
+    height: 74%;
+    position: absolute;
+    margin: 330px 0 0 180px;
+}
+.imagem-me::after {
+    z-index: -1;
+    content: '';
+    width: 170%;
+    height: 100%;
+    position: absolute;
+    background: var(--azul);
+    left: -180px;
+    top: -230px;
+}
+.me-bio{
+    position: absolute;
+    top: 390px;
+    left: 600px;
+    color: black;
+    font-family: var(--font-standart);
+    width: 340px;
+}
+.me-bio-titulo{
+    font-size: 60px;
+    margin-bottom: 12px;
+}
+.me-bio-texto{
+    font-size: 21px;
+}
+.cards{
+    margin-top: 570px;
+    position: relative;
+    height: 500px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.card{
+    top: 100px;
+    width:  260px;
+    height: 330px;
+    position: absolute;
+    transition-duration: 300ms;
+    transition-property: transform, box-shadow;
+    transition-timing-function: ease-out;
+    transform: rotate3d(0);
+}
+.card:hover{
+    transition-duration: 150ms;
+    box-shadow: 0 5px 20px 5px #00000044;
+}
+.card .glow{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-image: radial-gradient(circle at 50% -20%, #ffffff22, #0000000f);
+}
+.card-text{
+    font-size: 44px;
+    font-family: var(--font-standart);
+    color: black;
+    transition-duration: 300ms;
+    transition-property: transform, box-shadow;
+    transition-timing-function: ease-out;
+    transform: rotate3d(0);
 }

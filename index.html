@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="./src/style.css">
     <link href="https://fonts.googleapis.com/css?family=Kulim+Park:200,200i,300,300i,400,400i,600,600i,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700&display=swap" rel="stylesheet">
+
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 </head>
 <body>
     <div class="menu"></div>
@@ -34,14 +37,43 @@
                 <p>Aqui você encontrará diversas coisas das quais eu gosto muito, desde: plantas, programação e entre outros. Divirta-se conhecendo um pouquinho de mim ao longo deste site, desde já obrigado pela sua visita!</p>
             </div>
         </div>
-    </div>
         <svg height="100" class="border border-top" preserveAspectRatio="none" version="1.1" viewBox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg" fill="var(--bege)">
             <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
           </svg>
     </div>
-    <div class="container-inteiro">
-
+    
+    <div class="container-medio cards">
+        <div class="card">
+            <div class="card-text">ola</div>
+            <div class="glow"></div>
+        </div>
     </div>
+
+    <div class="container-medio me">
+        <div class="imagem-me"></div>
+        <div class="retangulo-me"></div>
+        <div class="me-bio">
+            <div class="me-bio-titulo">ME</div>
+            <div class="me-bio-texto">Aqui você encontrará diversas coisas das quais eu gosto muito, desde: plantas, programação e entre outros. Divirta-se conhecendo um pouquinho de mim ao longo deste site, desde já obrigado pela sua visita!</div>
+        </div>
+    </div>
+
+    
+
+ <!-- Add a menu:
+   Log in / Sign up - when the user is not logged in
+   Username / Log out - when the user is logged in
+  -->
+  <div data-netlify-identity-menu></div>
+
+  <!-- Add a simpler button:
+    Simple button that will open the modal.
+  -->
+  <div data-netlify-identity-button>Login with Netlify Identity</div>
+
+
+
+  
     <script src="./src/script.js"></script>
 </body>
 </html>
