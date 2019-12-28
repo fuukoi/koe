@@ -7,6 +7,7 @@
     --rosa: #efd5ca;
     --verde: #5b6356;
     --bege: #f5eee8;
+    --areia: #e7e2cf;
     --font-normal: 'Kulim Park', sans-serif;
     --font-standart: 'Old Standard TT', serif;
 }
@@ -69,6 +70,7 @@ html, body{
     height: 54%;
     left: 0;
     z-index: 9;
+    background-image: url(https://www.transparenttextures.com/patterns/asfalt-light.png);
 }
 .retangulo-dois{
     position: absolute;
@@ -79,6 +81,7 @@ html, body{
     height: 54%;
     right: 0;
     z-index: 8;
+    background-image: url(https://www.transparenttextures.com/patterns/asfalt-light.png);
 }
 .retangulo-tres{
     width: 50%;
@@ -88,6 +91,7 @@ html, body{
     bottom: -60px;
     left: 50%;
     transform: translate(-50%,0);
+    background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
 }
 .header .container-pequeno{
     position: absolute;
@@ -158,6 +162,7 @@ html, body{
     background: var(--azul);
     left: -180px;
     top: -230px;
+    background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
 }
 .me-bio{
     position: absolute;
@@ -180,36 +185,40 @@ html, body{
     height: 500px;
     left: 50%;
     transform: translate(-50%,0);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.card-retangulo{
+    position: absolute;
+    width: 82%;
+    height: 260px;
+    background: var(--areia);
+    left: 0;
+    bottom: -70px;
+    background-image: url(https://www.transparenttextures.com/patterns/green-dust-and-scratches.png);
 }
 .card{
-    top: 100px;
-    width:  260px;
-    height: 330px;
-    position: absolute;
-    transition-duration: 300ms;
-    transition-property: transform, box-shadow;
-    transition-timing-function: ease-out;
-    transform: rotate3d(0);
+    width:  220px;
+    height: 220px;
+    position: relative;
+    cursor: pointer;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: bottom !important;
 }
-.card:hover{
-    transition-duration: 150ms;
-    box-shadow: 0 5px 20px 5px #00000044;
+.card-um{
+    background-image: url(../images/card-1.jfif);
 }
-.card .glow{
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background-image: radial-gradient(circle at 50% -20%, #ffffff22, #0000000f);
+.card-dois {
+    background-image: url(../images/card-2.jfif);
+    margin-left: 25px;
+    margin-right: 25px;
 }
-.card-text{
-    font-size: 44px;
-    font-family: var(--font-standart);
-    color: black;
-    transition-duration: 300ms;
-    transition-property: transform, box-shadow;
-    transition-timing-function: ease-out;
-    transform: rotate3d(0);
+.card-tres{
+    margin-right: 25px;
+    background-image: url(../images/card-3.jfif);
+}
+.card-quatro{
+    background-image: url(../images/card-4.jfif);
 }

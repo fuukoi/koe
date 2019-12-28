@@ -19,13 +19,13 @@
         
         <div class="retangulo-um"></div>
         <div class="retangulo-dois"></div>
-
-        <!-- <div class="frases">
+<!-- 
+         <div class="frases">
             <div class="frases-autor">S. FREUD</div>
             <div class="frase">
                 Não somos apenas o que pensamos ser. Somo mais, somos também o que lembramos e aquilo que nos esquecemos; somos as palavras que trocamos, os enganos que cometemos, os impulsos a que cedemos, sem querer.
             </div>
-        </div> -->
+        </div>  -->
 
         <div class="container-pequeno">
             <div class="retangulo-tres"></div>
@@ -37,15 +37,21 @@
                 <p>Aqui você encontrará diversas coisas das quais eu gosto muito, desde: plantas, programação e entre outros. Divirta-se conhecendo um pouquinho de mim ao longo deste site, desde já obrigado pela sua visita!</p>
             </div>
         </div>
+    </div>
         <svg height="100" class="border border-top" preserveAspectRatio="none" version="1.1" viewBox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg" fill="var(--bege)">
             <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
           </svg>
     </div>
     
     <div class="container-medio cards">
-        <div class="card">
-            <div class="card-text">ola</div>
-            <div class="glow"></div>
+        <div class="card-retangulo"></div>
+        <div class="card card-um">
+        </div>
+        <div class="card card-dois">
+      </div>
+        <div class="card card-tres">
+        </div>
+        <div class="card card-quatro">
         </div>
     </div>
 
@@ -60,6 +66,27 @@
 
     
 
+    <form name="contact" method="POST" data-netlify="true">
+        <p>
+          <label>Your Name: <input type="text" name="name" /></label>   
+        </p>
+        <p>
+          <label>Your Email: <input type="email" name="email" /></label>
+        </p>
+        <p>
+          <label>Your Role: <select name="role[]" multiple>
+            <option value="leader">Leader</option>
+            <option value="follower">Follower</option>
+          </select></label>
+        </p>
+        <p>
+          <label>Message: <textarea name="message"></textarea></label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
+
  <!-- Add a menu:
    Log in / Sign up - when the user is not logged in
    Username / Log out - when the user is logged in
@@ -73,7 +100,7 @@
 
 
 
-  
+
     <script src="./src/script.js"></script>
 </body>
 </html>
