@@ -27,18 +27,18 @@ html, body{
     width: 800px;
 }
 .menu{
-    width: 60%;
-    height: 70px;
+    width: 100%;
+    height: 30px;
     background: white;
     display: flex;
     position: fixed;
     top: 0;
     right: 0;
     z-index: 10000;
+    box-shadow: 4px 2px 19px 4px #0000000f;
 }
 .header{
-    height: 570px;
-    background: var(--bege);
+    height: 625;
     position: absolute;
     top: 0;
     width: 100%;
@@ -53,60 +53,39 @@ html, body{
 }
 .website-titulo{
     position: absolute;
-    top: 66px;
-    left: 17%;
-    font-size: 60px;
-    font-family: var(--font-normal);
-    transform: translate(-17%,0);
-    z-index: 10;
-    color: white;
-}
-.retangulo-um{
-    position: absolute;
-    top: 34%;
-    transform: translate(0, -34%);
-    background: var(--rosa);
-    width: 54%;
-    height: 54%;
-    left: 0;
-    z-index: 9;
-    background-image: url(https://www.transparenttextures.com/patterns/asfalt-light.png);
-}
-.retangulo-dois{
-    position: absolute;
-    top: 70%;
-    transform: translate(0, -70%);
-    background: var(--marrom);
-    width: 54%;
-    height: 54%;
-    right: 0;
-    z-index: 8;
-    background-image: url(https://www.transparenttextures.com/patterns/asfalt-light.png);
-}
-.retangulo-tres{
-    width: 50%;
-    height: 81%;
-    background: var(--verde);
-    position: absolute;
-    bottom: -60px;
+    top: 35px;
     left: 50%;
+    font-size: 60px;
+    font-family: var(--font-standart);
     transform: translate(-50%,0);
+    z-index: 11;
+    color: black;
+}
+
+.header-retangulo{
+    width: 60%;
+    height: 77%;
+    background: var(--rosa);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
 }
 .header .container-pequeno{
     position: absolute;
-    bottom: -100px;
-    height: 455px;
+    top: 50%;
+    height: 100%;
     left: 50%;
-    transform: translate(-50%,0);
+    transform: translate(-50%,-50%);
     z-index: 10;
 }
 .header-imagem{
     position: absolute;
-    top: 0;
+    top: 22%;
     left: 80px;
     width: 30%;
-    height: 80%;
+    height: 58%;
     background: url(../images/plant.jfif);
     background-size: cover;
     background-repeat: no-repeat;
@@ -114,20 +93,27 @@ html, body{
 }
 .text-box{
     position: absolute;
-    top: 80px;
-    right: 80px;
-    width: 40%;
-    height: 80%;
+    top: 55%;
+    right: 47%;
+    width: 30%;
+    height: 43%;
     background: var(--azul);
-    font-size: 16px;
+    font-size: 14px;
     font-family: var(--font-standart);
-    padding: 50px;
+    padding: 32px;
+    color: #eaeaea;
+}
+.text-box p:nth-child(1){
+    font-weight: bold;
     color: white;
+}
+.text-box p{
+    margin: 0;
 }
 .text-box-titulo{
     position: absolute;
-    top: 53px;
-    right: 111px;
+    top: 50%;
+    right: 39%;
     font-size: 43px;
     font-family: var(--font-standart);
     color: white;
@@ -181,8 +167,9 @@ html, body{
 }
 .cards{
     margin-top: 570px;
+    margin-bottom: 100px;
     position: relative;
-    height: 500px;
+    height: 420px;
     left: 50%;
     transform: translate(-50%,0);
     display: flex;
@@ -194,7 +181,7 @@ html, body{
     width: 82%;
     height: 260px;
     background: var(--areia);
-    left: 0;
+    right: 0;
     bottom: -70px;
     background-image: url(https://www.transparenttextures.com/patterns/green-dust-and-scratches.png);
 }
@@ -206,6 +193,7 @@ html, body{
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: bottom !important;
+    border: 1px solid #0000000a;
 }
 .card-um{
     background-image: url(../images/card-1.jfif);
@@ -221,4 +209,127 @@ html, body{
 }
 .card-quatro{
     background-image: url(../images/card-4.jfif);
+}
+.rodape{
+    background: var(--azul);
+    background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+    width: 100%;
+    height: 300px;
+}
+.pages{
+    height: 700px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 100px;
+}
+.page-retangulo-um{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25%;
+    height: 85%;
+    background: var(--verde);
+    background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+}
+.page-retangulo-dois{
+    position: absolute;
+    left: 0;
+    top: 55%;
+    width: 70%;
+    height: 50%;
+    background: var(--marrom);
+    background-image: url(https://www.transparenttextures.com/patterns/asfalt-light.png);
+}
+.page-retangulo-tres{
+    position: absolute;
+    left: 43%;
+    top: 77%;
+    width: 28%;
+    height: 39%;
+    background: var(--rosa);
+    z-index: 1;
+    background-image: url(https://www.transparenttextures.com/patterns/asfalt-light.png);
+}
+.page-imagem{
+    background-image: url(../images/link-image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 26%;
+    height: 50%;
+    left: 55%;
+    top: 44%;
+}
+.link-box{
+    position: absolute;
+    left: 27%;
+    top: 60%;
+    width: 30%;
+    height: 35%;
+    background: var(--azul);
+    z-index: 2;
+    background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+}
+.page-titulo{
+    position: absolute;
+    top: 49%;
+    left: 7%;
+    font-size: 67px;
+    font-family: var(--font-standart);
+    color: black;
+    z-index: 1;
+}
+.divisao{
+    height: 890px;
+    background: var(--areia);
+    background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+    margin-top: 250px;
+}
+.galeria{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    height: 1000px;
+    margin-top: 75px;
+}
+.galeria-imagem-1{
+    background-image: url(../images/galeria-1.jfif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 66%;
+    height: 34%;
+}
+.galeria-imagem-2{
+    background-image: url(../images/galeria-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    width: 32%;
+    height: 74%;
+}
+.galeria-imagem-3{
+    background-image: url(../images/galeria-3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 36%;
+    left: 0;
+    width: 32%;
+    height: 38%;
+}
+.galeria-imagem-4{
+    background-image: url(../images/galeria-4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 36%;
+    left: 34%;
+    width: 32%;
+    height: 38%;
 }
