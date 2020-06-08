@@ -1,0 +1,617 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select:none; 
+    user-select:none;
+    -o-user-select:none;
+}
+/* teste */
+@media screen and (orientation: portrait) {
+    html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    height: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    }
+  }
+/* teste end */
+video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 0;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#netflix_player-buttons {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2049194677871149) 100%);
+    transition: opacity .3s;
+}
+input[type=range] {
+    margin: auto 3vw;
+    outline: none;
+    padding: 0;
+    width: 100%;
+    height: 0.2vw;
+    background-color: rgba(255, 255, 255, .4);
+    background-image: -webkit-gradient(
+ linear,
+ 50% 0%,
+ 50% 100%,
+ color-stop(0%, #087af5),
+ color-stop(100%, #087af5)
+ );
+    background-image: -webkit-linear-gradient(
+ #e50914,
+ #e50914
+ );
+    background-image: -moz-linear-gradient(
+ #e50914,
+ #e50914
+ );
+    background-image: -o-linear-gradient(
+ #e50914,
+ #e50914
+ );
+    background-image: linear-gradient(
+ #e50914,
+ #e50914
+ );
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    /* track */
+    /* thumb */
+}
+input[type=range]::-webkit-slider-runnable-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+input[type=range]::-moz-range-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+input[type=range]::-moz-focus-outer {
+    border: 0;
+}
+input[type=range]::-webkit-slider-thumb {
+    width: 1.3vw;
+    height: 1.3vw;
+    border: 0;
+    background: #e50914;
+    border-radius: 100%;
+    box-shadow: 0 1px 2px 0px #000;
+    -webkit-appearance: none;
+}
+input[type=range]::-moz-range-thumb {
+    width: 1.3vw;
+    height: 1.3vw;
+    border: 0;
+    background: #e50914;
+    border-radius: 100%;
+    box-shadow: 0 1px 2px 0px #000;
+}
+#loading_page{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background: black;
+    background-image: url(./loading_icon.svg);
+    background-size: 8vw;
+    background-repeat: no-repeat;
+    background-position: 36% center;
+}
+#loading_page h1{
+    font-size: 3vw;
+    font-weight: 400;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    padding: 0;
+}
+#menuEp{
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.65) 100%);
+}
+#menu_episodes-season{
+    width: 34vw;
+    margin-top: 2vw;
+    margin-left: 5vw;
+} 
+#menu_episodes-season ul{
+    margin-top: 1vw;
+}
+#menu_episodes-season ul li{
+    width: 100%;
+    border-radius: 2px;
+    background: transparent;
+    border: 0.15vw solid transparent;
+    height: 2.5vw;
+    color: #fff;
+    font-size: 1.3vw;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+#menu_episodes-episodes{
+    margin-left: 5vw;
+    width: 57vw;
+    overflow: auto;
+    padding-top: 2vw;
+}
+#menu_episodes-episodes ul:nth-child(1n+2) {
+    margin-top: 60px !important;
+}
+#menu_episodes-episodes .tempespec{
+    color: white;
+    font-weight: 400;
+    font-size: 2vw;
+    padding-bottom: 11px;
+    margin-right: 1vw;
+    border-bottom: 2px solid white;
+}
+#menu_episodes-episodes .eppp{
+    display: flex;
+    position: relative;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+.description-ep-s {
+    width: calc(100% - 25vw - 11px);
+    margin-left: 11px;
+}
+.description-ep-s p{
+    margin: 0 1vw;
+    font-weight: 200;
+    font-size: 1.3vw;
+}
+.description-ep-s h1{
+    margin: 1vw;
+    font-size: 1.7vw;
+    font-weight: 400;
+}
+#menu_episodes-episodes .image_and-info{
+    width: 25vw;
+    height: 14vw;
+    background-size: cover !important;
+    position: relative;
+}
+.image_and-info h4{
+    margin: 0;
+    position: absolute;
+    bottom: 2.2vw;
+    left: 1.8vw;
+    font-weight: 400;
+    font-size: 1.25vw;
+}
+.ep-progress{
+    position: absolute;
+    height: 0.14vw;
+    width: 85%;
+    background: rgba(255, 255, 255, 0.8);
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 2vw;
+    border-radius: 100px;
+}
+.ep-progress .current-progress{
+    height: 100%;
+    position: relative;
+    background: #e50914;
+}
+.fullscreen{    
+    background: url(./fullscreen_icon.svg);
+    height: 2.1vw;
+    width: 2.1vw;
+    background-size: cover;
+    cursor: pointer;
+}
+.play_and_pause{
+    position: relative;
+}
+.play_and_pause div{
+    width: 6vw;
+    height: 6vw;
+    background-size: cover !important;
+    cursor: pointer;
+}
+.loading_video {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 200;
+    background: url(./loading_icon.svg);
+}
+#play{
+    background: url(./play_icon.svg);
+}
+#pause{
+    background: url(./pause_icon.svg);
+}
+#back-10, #next-10{
+    width: 4vw;
+    height: 4vw;
+    background-size: cover !important;
+    position: relative;
+    cursor: pointer;
+}
+#back-10{
+    background: url(./previous_icon.svg);
+}
+#next-10{
+    background: url(./next_icon.svg);
+}
+#next-10 span{
+    transform: translate(-75%,-50%);
+    font-size: 1.7vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+#back-10 span{
+    transform: translate(-25%,-50%);
+    font-size: 1.7vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.center_buttons{
+    display: flex;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    width: 40vw;
+    justify-content: space-between;
+    align-items: center;
+}
+#duration,#current{
+    font-size: 1.1vw;
+}
+.progress{
+    display: flex;
+    position: absolute;
+    bottom: 8vw;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%);
+}
+.top_buttons{
+    position: absolute;
+    width: 90%;
+    top: 2vw;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.7vw;
+    font-weight: 300;
+}
+#back-to-home{
+    background: url(./back-too-page_icon.svg);
+    background-size: cover;
+    width: 2.1vw;
+    height: 2.1vw;
+    cursor: pointer;
+}
+.bottom_buttons{
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+    height: 8vw;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+.bottom_buttons div{
+    display: flex;
+    align-items: center;
+    margin: 0 20px 0 20px;
+    cursor: pointer;
+}
+.bottom_buttons h2{
+    font-size: 1.5vw !important;
+    font-weight: 300 !important;
+}
+.bottom_buttons .icon{
+    background-size: cover !important;
+    width: 1.7vw;
+    height: 1.7vw;
+    position: relative;
+    margin-right: 1vw;
+}
+.epseason .icon{
+    background: url(./episodes_icon.svg);
+}
+.next_ep .icon{
+    background: url(./next-episode_icon.svg);
+}
+.config .icon{
+    background: url(./settings-work-tool.svg);
+}
+#main_menu{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0,0,0,0.2049194677871149) 100%);
+}
+.mini_menu{
+    width: 52%;
+    height: 100%;
+    position: absolute;
+    right: 5vw;
+    top: 20vh;
+}
+.basic_info{
+    margin: 1.5vw 0 2vh 0;
+    font-size: 1.3vw;
+    display: none; /*decidir o que vai fazer*/
+}
+#classification{
+    background: #404040;
+    padding: 0 0.45vw;
+    border-radius: 3px;
+    font-size: 1.13vw;
+    margin: 0 0.6vw;
+}
+.sinopse{
+    margin: 4vw 0 0vw 0;
+    font-size: 3.3vh;
+    font-weight: 300 !important;
+}
+.mainMenu_buttons{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    bottom: 33vh;
+    margin: 0vw 0 0vw 0;
+}
+.mainMenu_buttons .watch{
+    height: 4.4vh;
+    color: white;
+    text-align: left;
+    font-size: 105%;
+    display: flex;
+    padding: 9px 25px 9px 25px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    align-items: center;
+    background: #e50914;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+.mainMenu_buttons .watch:hover {
+    transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+    margin-right: 8px;
+}
+.mainMenu_buttons .add-to-list{
+    height: 4.4vh;
+    color: white;
+    text-align: left;
+    font-size: 105%;
+    display: flex;
+    padding: 8px 14px 8px 14px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    align-items: center;
+    background: transparent;
+    margin-left: 8px;
+    border-radius: 2px;
+    transition: all 0.3s;
+    border: 1px solid #e50914;
+}
+.mainMenu_buttons .add-to-list:hover {
+    transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+    margin-left: 11px;
+}
+.mainMenu_buttons div div{
+    margin-left: 1vw;
+    font-size: 2.5vh;
+    font-weight: 300;
+}
+.mainMenu_buttons .icon{
+    height: 2.7vh;
+    width: 2.7vh;
+    cursor: pointer;
+}
+.watch .icon{
+    background: url(./play_icon.svg);
+}
+.seasonAndEps{
+    display: none !important;/*decidir o que vai fazer*/
+}
+.seasonAndEps .icon{
+    background: url(./episodes_icon.svg);
+}
+#looseButton{
+    bottom: 2vw;
+    right: 5vw;
+    position: absolute;
+    z-index: 101;
+    border-radius: 2px;
+    width: 18vw;
+    height: 4.5vw;
+    cursor: pointer;
+}
+#looseButton h2 {
+    background-color: #fff;
+    color: #000;
+    mix-blend-mode: screen;
+    padding: 1vw 0 1vw 2vw;
+    border-radius: 2px;
+    font-size: 1.5vw;
+    margin: 0;
+    opacity: 0.9;
+    font-weight: 400;
+  }
+#looseButton h2:last-child {
+    mix-blend-mode: normal;
+    color: transparent;
+    background: none;
+  }
+#next_-EP .icon{
+    background: url(./play_icon.svg);
+    background-size: cover;
+    width: 2vw;
+    height: 2vw;
+}
+#configPage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    width: 100%;
+    height: 100%;
+}
+.iconClose{
+    background: url(./back-too-page_icon.svg);
+    background-size: cover;
+    width: 2.1vw;
+    height: 2.1vw;
+    cursor: pointer;
+    position: absolute;
+    top: 2vw;
+    left: 5vw;
+    z-index: 103;
+}
+.closeConfig{
+    position: absolute;
+    z-index: 102;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.configgg{
+    position: absolute;
+    z-index: 103;
+    right: 0;
+    width: 53vh;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2049194677871149) 100%);
+    font-size: 1.7vw;
+}
+.configgg div{
+    margin-left: 30px;
+}
+.configgg div ul{
+    font-size: 1.4vw;
+}
+.configgg div h4{
+    margin-bottom: 10px;
+}
+.volume input{
+    width: calc(53vh - 60px);
+    margin: 0;
+}
+.mini_player-progress{
+    width: 100%;
+    height: 17vw;
+    bottom: 12vw;
+    position: absolute;
+    z-index: 102;
+    left: 50%;
+    transform: translate(-50%);
+}
+.mini_player-progress .timeeee{
+    position: absolute;
+    bottom: 0;
+    width: calc(90% - 12vw);
+    left: 50%;
+    transform: translate(-50%);
+    background: #e50914;
+}
+#mini-moviment{
+    width: 25vw;
+    height: 100%;
+    position: absolute;
+}
+#mini-player{
+    width: 100%;
+    height: 14vw;
+    background: rgba(0, 0, 0, 0.4)
+}
+#mini-time{
+    margin: 0;
+    padding: 0;
+    transform: translate(-50%);
+    position: absolute;
+    bottom: 0;
+    font-size: 1.4vw;
+    font-weight: 400;
+}
+div#navbar{
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    border-right: 1px solid rgba(255, 255, 255, 0.22);
+    transition: left 0.7s cubic-bezier(0, 0, 0.2, 1), opacity 0.2s;
+}
+div#navbar .logo{
+    margin-top: 15px;
+}
+div#navbar .logo div{
+    background: url(https://i.imgur.com/zaibtgC.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50px;
+    height: 41px;
+}
+div#navbar .itens{
+    background: orchid;
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    bottom: 0; 
+}

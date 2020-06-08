@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NetFlix</title>
+    <link rel="stylesheet" href="./netflix_player_style-css.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet"/>
+</head>
+<body>
+    <div id="loading_page"><h1>Carregando...</h1></div>
+    <video id="player"></video>
+    <script src="./netflix_player.js"></script>
+    <div id="navbar">
+        <div class="logo">
+            <div></div>
+        </div>
+        <div class="itens">
+
+        </div>
+    </div>
+    <div id="configPage" style="display: none;">
+        <div class="closeConfig" onclick="netflix.mainMenuPLayy();"></div>
+        <div class="iconClose" onclick="netflix.mainMenuPLayy();"></div>
+        <div class="configgg">
+            <div class="volume">
+                <h4 style="font-weight: 400;">Volume</h4>
+                <input id="volumee" type="range" min="0" max="1" step="0.001" oninput="netflix.setVolume(this);">
+            </div>
+            <div class="quality">
+                <h4 style="font-weight: 400;">Qualidade</h4>
+                <ul>
+                    <li onclick="netflix.selectQuality(37);" style="font-weight: 300;">1080p</li>
+                    <li onclick="netflix.selectQuality(22);" style="font-weight: 300;">720p</li>
+                    <li onclick="netflix.selectQuality(18);" style="font-weight: 300;">360p</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+            netflix.startPlayer();
+            let playerButtons,
+                mainMenu,
+                looseBtn,
+                menuEp;
+            netflix.player.onloadeddata = function () {
+                menuEp = document.createElement('div');
+                menuEp.id = "menuEp";
+                menuEp.innerHTML += '<div id="menu_episodes-season"><img style="width: 100%;" src='+netflix.serieInfo.sLogo+'/><ul></ul></div><div id="menu_episodes-episodes"></div>';
+                playerButtons = document.createElement('div');
+                playerButtons.id = "netflix_player-buttons";
+                playerButtons.style.display = "none";
+                playerButtons.onmousemove = function(){netflix.removeButtons();};
+                playerButtons.innerHTML += '<div class="top_buttons"><div id="back-to-home" onclick="netflix.backToHome();"></div><div id="title"></div><div class="fullscreen" onclick="netflix.fullScreen();"></div></div><div class="center_buttons"><div onclick="netflix.back10();" id="back-10" title="Voltar 10 segundos"><span>10</span></div><div class="play_and_pause"><div class="loading_video" style="display: none;"></div><div onclick="netflix.playVideo();" id="play" style="display: block;" title="Play"></div><div onclick="netflix.pauseVideo();" style="display: none;" id="pause" title="Pause"></div></div><div onclick="netflix.next10();" id="next-10" title="Avançar 10 segundos"><span>10</span></div></div><div class="mini_player-progress" style="display: none;"><div id="mini-moviment"><video preload="auto" id="mini-player"></video></div><div class="timeeee"><h4 id="mini-time"></h4></div></div><div class="progress"><div id="current"></div><input type="range" id="progress_bar" step="0.1" min="0" max="' 
+                + netflix.player.duration + 
+                '" value="0" ontouchend="netflix.setTime.inputoff();" onmouseup="netflix.setTime.inputoff();" oninput="netflix.setTime.input(this);"><div id="duration"></div></div><div class="bottom_buttons"><div class="next_ep" onclick="netflix.nextEpisode();"><span class="icon"></span><h2>Próximo Episódio</h2></div><div class="epseason" onclick="netflix.seasonAndEp();"><span class="icon"></span> <h2>Episódios</h2></div><div class="config" onclick="netflix.openConfig();"><span class="icon"></span> <h2>Configuração</h2></div>'
+                mainMenu = document.createElement('div');
+                mainMenu.id = "main_menu";
+                mainMenu.innerHTML = "<div class='mini_menu'><img style='width: 100%;' id='logo' src="+netflix.serieInfo.sLogo+"/><div class='basic_info'><span id='year'>"+netflix.serieInfo.sDate+"</span><span id='classification'>"+netflix.serieInfo.sAgeRating+"</span><span id='seasons'>"+netflix.season_and_episodes.length+" Temporada(s)</span></div><div class='sinopse'>"+netflix.serieInfo.sSinopse+"</div><div class='mainMenu_buttons'><div class='watch' onclick='netflix.mainMenuPLayy();'><span class='icon'></span> <div id='watch-text'>Assistir</div><div style='display: none;' id='watch-progress'><div id='watch-progress-line'></div></div></div><div class='seasonAndEps' onclick='netflix.seasonAndEp();'><span class='icon'></span> <div>Episódios e mais</div></div><div class='add-to-list'><span class='icon'></span></div></div></div>";
+                netflix.btnAddorRemove();
+                looseBtn = document.createElement('div');
+                looseBtn.id = "looseButton";
+                looseBtn.style.display = "none";
+                looseBtn.onclick = function(){
+                    netflix.season_and_episodes[(netflix.playerSeason - 1)][(netflix.playerEpisode - 1)].progress = netflix.player.duration;
+                    netflix.nextEpisode();
+                };
+                looseBtn.innerHTML = "<h2 id='next_-EP-time'></h2><h2 id='next_-EP-time2'></h2>";
+                document.body.appendChild(looseBtn);
+                document.body.appendChild(mainMenu);
+                document.body.appendChild(playerButtons);
+                document.body.appendChild(menuEp);
+                netflix.playVideo();
+                netflix.setVolume(document.getElementById('volumee'));
+                document.getElementById('loading_page').style.display = 'none';
+                if(localStorage.getItem('loadingg-'+netflix.serieInfo.sName+'') || false == "true"){
+                netflix.loadingData();
+                netflix.buttonStartt();
+            }else{
+                localStorage.setItem('loadingg-'+netflix.serieInfo.sName+'', true);
+            }
+            }
+    </script>
+</body>
+</html>
